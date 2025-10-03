@@ -1,0 +1,21 @@
+[build]
+  functions = "netlify/functions"
+
+[functions]
+  # Set Node.js version
+  node_bundler = "esbuild"
+
+# CORS headers for all function responses
+[[headers]]
+  for = "/.netlify/functions/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Headers = "Content-Type, Authorization"
+    Access-Control-Allow-Methods = "POST, OPTIONS"
+
+# Environment variables (set these in Netlify UI)
+# AUTH0_DOMAIN=your-tenant.auth0.com
+# AUTH0_AUDIENCE=your-api-identifier
+# TJING_API_URL=https://dev.api.tjing.se
+# TJING_PARTNER_SLUG=link
+# TJING_PARTNER_TOKEN=your-partner-session-token
